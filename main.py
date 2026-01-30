@@ -56,7 +56,7 @@ async def health_check(request):
     return JSONResponse({"status": "healthy", "service": "mcp-server"})
 
 
-# Get the MCP HTTP app directly (don't wrap it) **
+# Create a Starlette ASGI web application for uvicorn to serve
 app = mcp.http_app()
 
 if __name__ == "__main__":
